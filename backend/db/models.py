@@ -88,29 +88,40 @@ class PriceAlert(Base):
 class Announcement(Base):
     """
     Corporate announcements fetched from NSE/BSE feeds.
-    Populated in Phase 2; schema created here so DB is complete from startup.
+    Stores complete filing metadata, categorization, explainable materiality,
+    and raw payload for full traceability.
     """
     __tablename__ = "announcements"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    exchange: Mapped[str] = mapped_column(String(10), nullable=False)   # 'NSE' | 'BSE'
+    exchange: Mapped[str] = mapped_column(String(10), nullable=False, default="NSE")   # 'NSE' | 'BSE'
     symbol: Mapped[str] = mapped_column(String(20), nullable=False)
     company: Mapped[str] = mapped_column(String(120), nullable=True)
     headline: Mapped[str] = mapped_column(Text, nullable=False)
-    category: Mapped[str] = mapped_column(String(40), nullable=True)    # LLM-classified
-    materiality: Mapped[str] = mapped_column(String(10), nullable=True) # 'high'|'medium'|'low'
-    summary: Mapped[str] = mapped_column(Text, nullable=True)           # LLM one-liner
-    filing_dt: Mapped[str] = mapped_column(String(30), nullable=True)
-    pdf_url: Mapped[str] = mapped_column(Text, nullable=True)
-    raw_json: Mapped[str] = mapped_column(Text, nullable=True)
+    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    category: Mapped[str] = mapped_column(String(40), nullable=True)    # results | M&A | fund_raise | etc.
+    classification_rationale: Mapped[str | None] = mapped_column(Text, nullable=True)
+    classification_confidence: Mapped[str | None] = mapped_column(String(20), nullable=True, default="HIGH")
+    materiality: Mapped[str] = mapped_column(String(10), nullable=True, default="LOW") # 'HIGH' | 'MEDIUM' | 'LOW'
+    materiality_score: Mapped[float | None] = mapped_column(Float, nullable=True, default=1.0) # 1.0 to 10.0
+    materiality_rationale: Mapped[str | None] = mapped_column(Text, nullable=True)
+    summary: Mapped[str | None] = mapped_column(Text, nullable=True)           # concise one-liner
+    filing_dt: Mapped[str | None] = mapped_column(String(30), nullable=True)   # raw exchange date string
+    filing_datetime: Mapped[datetime | None] = mapped_column(DateTime, nullable=True) # normalized datetime for filtering
+    pdf_url: Mapped[str | None] = mapped_column(Text, nullable=True)
+    raw_json: Mapped[str | None] = mapped_column(Text, nullable=True)
+    dedup_key: Mapped[str | None] = mapped_column(String(128), unique=True, index=True, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=func.now())
 
     __table_args__ = (
         Index("ix_announcements_symbol_dt", "symbol", "filing_dt"),
+        Index("ix_announcements_filing_datetime", "filing_datetime"),
+        Index("ix_announcements_category", "category"),
+        Index("ix_announcements_materiality", "materiality"),
     )
 
     def __repr__(self) -> str:
-        return f"<Announcement symbol={self.symbol} headline={self.headline[:40]}>"
+        return f"<Announcement symbol={self.symbol} category={self.category} headline={self.headline[:35]}>"
 
 
 class ResearchCache(Base):

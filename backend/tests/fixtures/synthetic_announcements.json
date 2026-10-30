@@ -1,0 +1,182 @@
+[
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE — Used for reproducible testing of parsing and classification",
+    "seq_id": "SYNTH_001",
+    "symbol": "RELIANCE",
+    "sm_name": "Reliance Industries Limited",
+    "desc": "Outcome of Board Meeting - Financial Results",
+    "attchmntText": "Reliance Industries Limited has submitted to the Exchange the Unaudited Standalone and Consolidated financial results for the quarter ended September 30, 2026.",
+    "an_dt": "30-Oct-2026 18:30:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/RELIANCE_30102026_BM_Results.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_002",
+    "symbol": "INFY",
+    "sm_name": "Infosys Limited",
+    "desc": "General Updates - Acquisition of InSemi Technology",
+    "attchmntText": "Infosys Limited has informed the Exchange regarding an agreement for acquisition of 100% stake in InSemi Technology Services, a leading semiconductor design services provider.",
+    "an_dt": "30-Oct-2026 17:15:22",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/INFY_30102026_Acquisition_Intimation.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_003",
+    "symbol": "HDFCBANK",
+    "sm_name": "HDFC Bank Limited",
+    "desc": "Fund Raising - Issuance of Non-Convertible Debentures",
+    "attchmntText": "HDFC Bank Limited has informed the Exchange regarding the approval of raising of funds via issuance of Non-Convertible Debentures (NCDs) on private placement basis up to Rs 15,000 crore.",
+    "an_dt": "30-Oct-2026 16:00:10",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/HDFCBANK_30102026_NCD_FundRaise.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_004",
+    "symbol": "TCS",
+    "sm_name": "Tata Consultancy Services Limited",
+    "desc": "Change in Management - Resignation of CFO",
+    "attchmntText": "Tata Consultancy Services Limited has informed the Exchange regarding the resignation of Mr. Samir Seksaria as Chief Financial Officer and Key Managerial Personnel effective November 15, 2026.",
+    "an_dt": "30-Oct-2026 15:45:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/TCS_30102026_CFO_Resignation.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_005",
+    "symbol": "SUNPHARMA",
+    "sm_name": "Sun Pharmaceutical Industries Limited",
+    "desc": "Litigation / Regulatory Order - Warning Letter",
+    "attchmntText": "Sun Pharmaceutical Industries Limited has informed the Exchange regarding receipt of a warning letter from US FDA for its Dadra manufacturing facility following an inspection.",
+    "an_dt": "30-Oct-2026 14:10:05",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/SUNPHARMA_30102026_Regulatory_Order.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_006",
+    "symbol": "MARUTI",
+    "sm_name": "Maruti Suzuki India Limited",
+    "desc": "Capital Expenditure - Setting up of new plant",
+    "attchmntText": "Maruti Suzuki India Limited has approved capital expenditure of Rs 3,200 crore towards capacity expansion and commissioning of a new manufacturing facility in Gujarat.",
+    "an_dt": "30-Oct-2026 12:20:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/MARUTI_30102026_Capex_Gujarat.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_007",
+    "symbol": "TITAN",
+    "sm_name": "Titan Company Limited",
+    "desc": "Declaration of Interim Dividend and Record Date",
+    "attchmntText": "Titan Company Limited has declared an interim dividend of Rs 11.00 per equity share. The record date for the payment of dividend has been fixed as November 10, 2026.",
+    "an_dt": "30-Oct-2026 11:00:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/TITAN_30102026_Dividend_RecordDate.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_008",
+    "symbol": "PIDILITIND",
+    "sm_name": "Pidilite Industries Limited",
+    "desc": "Corporate Action - Bonus Issue of Shares",
+    "attchmntText": "Pidilite Industries Limited board has recommended a bonus issue of equity shares in the ratio of 1:1, subject to shareholder approval.",
+    "an_dt": "30-Oct-2026 10:30:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/PIDILITIND_30102026_Bonus_Issue.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_009",
+    "symbol": "POWERGRID",
+    "sm_name": "Power Grid Corporation of India Limited",
+    "desc": "Credit Rating - Reaffirmation by CRISIL",
+    "attchmntText": "Power Grid Corporation of India Limited informs the Exchange that CRISIL has reaffirmed its AAA/Stable credit rating on long term borrowing programmes.",
+    "an_dt": "30-Oct-2026 09:45:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/POWERGRID_30102026_CRISIL_Rating.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_010",
+    "symbol": "ADANIPORTS",
+    "sm_name": "Adani Ports and Special Economic Zone Limited",
+    "desc": "Press Release - Major Commercial Contract Won",
+    "attchmntText": "Adani Ports and Special Economic Zone Limited has released a press release regarding securing a new long-term commercial concession agreement at Gopalpur Port.",
+    "an_dt": "30-Oct-2026 08:30:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/ADANIPORTS_30102026_PressRelease_Gopalpur.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_011",
+    "symbol": "ICICIBANK",
+    "sm_name": "ICICI Bank Limited",
+    "desc": "Earnings Call - Transcript of Conference Call",
+    "attchmntText": "ICICI Bank Limited has submitted the transcript of earnings call held on October 25, 2026 with analysts and investors discussing Q2 FY27 financial performance.",
+    "an_dt": "29-Oct-2026 21:00:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/ICICIBANK_29102026_Concall_Transcript.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_012",
+    "symbol": "BAJFINANCE",
+    "sm_name": "Bajaj Finance Limited",
+    "desc": "Investor Meet - Schedule of Institutional Investor Meeting",
+    "attchmntText": "Bajaj Finance Limited has informed the Exchange regarding the schedule of one-on-one institutional investor meet with Fidelity Management in Mumbai on November 2, 2026.",
+    "an_dt": "29-Oct-2026 19:15:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/BAJFINANCE_29102026_Investor_Schedule.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_013",
+    "symbol": "DRREDDY",
+    "sm_name": "Dr. Reddy's Laboratories Limited",
+    "desc": "Insider Trading - Disclosures under SEBI (PIT) Regulations",
+    "attchmntText": "Dr. Reddy's Laboratories Limited has submitted disclosures under Regulation 7(2) of SEBI (Prohibition of Insider Trading) Regulations regarding disposal of shares by a designated person.",
+    "an_dt": "29-Oct-2026 17:00:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/DRREDDY_29102026_PIT_Disclosure.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_014",
+    "symbol": "AXISBANK",
+    "sm_name": "Axis Bank Limited",
+    "desc": "Promoter Share Pledging - Disclosure under SAST Regulations",
+    "attchmntText": "Axis Bank Limited has submitted disclosure under Regulation 31(1) and 31(2) of SEBI (SAST) Regulations regarding release of pledge on equity shares.",
+    "an_dt": "29-Oct-2026 14:00:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/AXISBANK_29102026_SAST_ReleasePledge.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_015",
+    "symbol": "NESTLEIND",
+    "sm_name": "Nestle India Limited",
+    "desc": "Shareholders Meeting - Proceedings of Extraordinary General Meeting (EGM)",
+    "attchmntText": "Nestle India Limited has submitted the summary of proceedings of Extraordinary General Meeting of shareholders held on October 29, 2026 along with scrutinizer report.",
+    "an_dt": "29-Oct-2026 12:00:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/NESTLEIND_29102026_EGM_Proceedings.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_016",
+    "symbol": "RELIANCE",
+    "sm_name": "Reliance Industries Limited",
+    "desc": "Postal Ballot - Voting Results and Scrutinizer Report",
+    "attchmntText": "Reliance Industries Limited has submitted the voting results of postal ballot conducted via remote e-voting pursuant to Regulation 44 of SEBI (LODR) Regulations.",
+    "an_dt": "28-Oct-2026 15:30:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/RELIANCE_28102026_PostalBallot_Result.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_017",
+    "symbol": "TCS",
+    "sm_name": "Tata Consultancy Services Limited",
+    "desc": "Allotment of Equity Shares under ESOP Scheme",
+    "attchmntText": "Tata Consultancy Services Limited has approved the allotment of 12,450 equity shares to eligible employees under the Employee Stock Option Scheme.",
+    "an_dt": "27-Oct-2026 16:45:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/TCS_27102026_ESOP_Allotment.pdf"
+  },
+  {
+    "__fixture_note__": "SYNTHETIC TEST FIXTURE",
+    "seq_id": "SYNTH_018",
+    "symbol": "ZOMATO",
+    "sm_name": "Zomato Limited",
+    "desc": "General Updates - Operational Milestone",
+    "attchmntText": "Zomato Limited informs the Exchange regarding reaching an operational milestone in quick commerce division.",
+    "an_dt": "30-Oct-2026 19:00:00",
+    "attchmntFile": "https://nsearchives.nseindia.com/corporate/ZOMATO_30102026_General_Updates.pdf"
+  }
+]

@@ -493,10 +493,10 @@ class TestPortfolioAPI:
         assert r.status_code == 200
         assert isinstance(r.json(), list)
 
-    def test_today_stub_returns_not_implemented(self):
+    def test_today_endpoint_active(self):
         r = self._client.get("/api/today/announcements")
         assert r.status_code == 200
-        assert r.json()["status"] == "not_implemented"
+        assert isinstance(r.json(), list)
 
     def test_research_stub_returns_not_implemented(self):
         r = self._client.post("/api/research/report", json={})

@@ -39,7 +39,7 @@ if str(_here) not in sys.path:
 # Internal imports (after path fix)
 # ---------------------------------------------------------------------------
 from config import get_settings
-from db.database import engine, SessionLocal
+from db.database import engine, SessionLocal, run_migrations
 from db.models import Base
 from services.seed_service import seed_portfolio
 from routers import portfolio, today, research
@@ -56,8 +56,9 @@ async def lifespan(app: FastAPI):
     # ── Startup ──────────────────────────────────────────────────────────
     logger.info("FINN backend starting up…")
 
-    # Create all tables that don't already exist
+    # Create all tables that don't already exist and safely migrate Phase 2 columns
     Base.metadata.create_all(bind=engine)
+    run_migrations(engine)
     logger.info("Database tables verified / created.")
 
     # Seed portfolio (no-op if already seeded)
@@ -122,7 +123,7 @@ def health() -> dict:
         "version": "0.1.0",
         "phases": {
             "1_backend_skeleton": "complete",
-            "2_announcements": "stub",
+            "2_announcements": "complete",
             "3_research": "stub",
             "4_frontend": "not_started",
         },
