@@ -1,0 +1,17 @@
+[
+  { "ticker": "RELIANCE.NS", "name": "Reliance Industries Ltd",   "exchange": "NSE", "sector": "Conglomerate",   "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "INFY.NS",     "name": "Infosys Ltd",               "exchange": "NSE", "sector": "IT Services",    "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "TCS.NS",      "name": "Tata Consultancy Services", "exchange": "NSE", "sector": "IT Services",    "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "HDFCBANK.NS", "name": "HDFC Bank Ltd",             "exchange": "NSE", "sector": "Banking",        "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "ICICIBANK.NS","name": "ICICI Bank Ltd",            "exchange": "NSE", "sector": "Banking",        "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "AXISBANK.NS", "name": "Axis Bank Ltd",             "exchange": "NSE", "sector": "Banking",        "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "MARUTI.NS",   "name": "Maruti Suzuki India Ltd",   "exchange": "NSE", "sector": "Automobile",     "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "BAJFINANCE.NS","name":"Bajaj Finance Ltd",          "exchange": "NSE", "sector": "NBFC",           "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "SUNPHARMA.NS","name": "Sun Pharmaceutical Ind",    "exchange": "NSE", "sector": "Pharma",         "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "DRREDDY.NS",  "name": "Dr Reddy's Laboratories",   "exchange": "NSE", "sector": "Pharma",         "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "TITAN.NS",    "name": "Titan Company Ltd",         "exchange": "NSE", "sector": "Consumer",       "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "PIDILITIND.NS","name":"Pidilite Industries Ltd",   "exchange": "NSE", "sector": "Chemicals",      "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "ADANIPORTS.NS","name":"Adani Ports & SEZ Ltd",     "exchange": "NSE", "sector": "Infrastructure", "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "POWERGRID.NS","name": "Power Grid Corp of India",  "exchange": "NSE", "sector": "Utilities",      "vol_alert_mult": 2.0, "price_alert_pct": 5.0 },
+  { "ticker": "NESTLEIND.NS","name": "Nestle India Ltd",          "exchange": "NSE", "sector": "FMCG",           "vol_alert_mult": 2.0, "price_alert_pct": 5.0 }
+]
