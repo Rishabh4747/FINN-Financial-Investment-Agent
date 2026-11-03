@@ -49,3 +49,6 @@ dist-ssr/
 .idea/
 *.swp
 *.swo
+
+# Scratch files
+scratch/

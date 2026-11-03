@@ -23,8 +23,8 @@ class Base(DeclarativeBase):
 
 def run_migrations(target_engine):
     """
-    Safely adds newly defined Phase 2 columns to the SQLite `announcements` table
-    if it already exists without them, without losing existing portfolio or price data.
+    Safely runs database migrations and ensures virtual tables (FTS5) are initialized.
+    Preserves all existing data across tables.
     """
     inspector = inspect(target_engine)
     if "announcements" in inspector.get_table_names():
@@ -43,6 +43,24 @@ def run_migrations(target_engine):
                 if col_name not in existing_cols:
                     conn.execute(text(f"ALTER TABLE announcements ADD COLUMN {col_name} {col_type}"))
             conn.commit()
+
+    # Initialize FTS5 virtual table for high-speed passage retrieval if SQLite supports it
+    with target_engine.connect() as conn:
+        try:
+            conn.execute(text("""
+                CREATE VIRTUAL TABLE IF NOT EXISTS fts_chunks USING fts5(
+                    chunk_id UNINDEXED,
+                    document_id UNINDEXED,
+                    ticker UNINDEXED,
+                    page_number UNINDEXED,
+                    content,
+                    tokenize = 'porter unicode61'
+                )
+            """))
+            conn.commit()
+        except Exception:
+            # Fallback if FTS5 is not compiled into a particular SQLite binary
+            pass
 
 
 def get_db():
