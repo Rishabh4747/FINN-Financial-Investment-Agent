@@ -52,3 +52,7 @@ dist-ssr/
 
 # Scratch files
 scratch/
+
+# Document storage
+documents/
+backend/documents/

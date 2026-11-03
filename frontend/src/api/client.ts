@@ -3,9 +3,14 @@
  * Supports configurable VITE_API_BASE_URL (defaults to /api with Vite dev proxy).
  */
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL
-  ? `${import.meta.env.VITE_API_BASE_URL.replace(/\/$/, "")}/api`
-  : "/api"
+function getBaseUrl(): string {
+  const envUrl = import.meta.env.VITE_API_BASE_URL
+  if (!envUrl) return "/api"
+  const trimmed = envUrl.trim().replace(/\/$/, "")
+  return trimmed.endsWith("/api") ? trimmed : `${trimmed}/api`
+}
+
+const BASE_URL = getBaseUrl()
 
 // ============================================================================
 // Types

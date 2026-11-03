@@ -1,6 +1,7 @@
 """
 SQLAlchemy engine, session factory, and Base for all ORM models.
 """
+from pathlib import Path
 from sqlalchemy import create_engine, text, inspect
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
@@ -8,8 +9,17 @@ from config import get_settings
 
 settings = get_settings()
 
+db_url = settings.database_url
+# Ensure parent directory exists for SQLite files (e.g. /var/data on Render persistent disk)
+if db_url.startswith("sqlite:///") and not db_url.startswith("sqlite:///:memory:"):
+    db_file_str = db_url.replace("sqlite:///", "")
+    try:
+        Path(db_file_str).parent.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        pass
+
 engine = create_engine(
-    settings.database_url,
+    db_url,
     connect_args={"check_same_thread": False},  # required for SQLite
     echo=False,
 )

@@ -27,7 +27,7 @@ import requests
 from bs4 import BeautifulSoup
 from sqlalchemy.orm import Session
 
-from config import get_settings
+from config import get_settings, get_documents_dir
 from db.models import Announcement, SourceDocument
 from services.retrieval_service import index_document_chunks
 
@@ -296,6 +296,15 @@ def ingest_document(
     status = "pending"
     pages_text: list[tuple[int, str]] = []
 
+    # Check if raw PDF binary is already cached on persistent disk
+    disk_pdf_path = get_documents_dir() / f"{ticker}_{dedup_key}.pdf"
+    if pdf_bytes is None and disk_pdf_path.exists():
+        try:
+            pdf_bytes = disk_pdf_path.read_bytes()
+            logger.info(f"Loaded existing document binary from persistent disk: {disk_pdf_path}")
+        except Exception as exc:
+            logger.warning(f"Could not read cached PDF from disk {disk_pdf_path}: {exc}")
+
     if pdf_bytes is None:
         try:
             resp = requests.get(canonical_url, headers=DEFAULT_HEADERS, timeout=timeout)
@@ -316,6 +325,14 @@ def ingest_document(
             notes += f" Download failed: {str(exc)}"
 
     if pdf_bytes and status != "failed":
+        # Ensure document is saved to persistent disk
+        if not disk_pdf_path.exists():
+            try:
+                disk_pdf_path.write_bytes(pdf_bytes)
+                logger.info(f"Saved primary document PDF to persistent disk: {disk_pdf_path}")
+            except Exception as exc:
+                logger.warning(f"Could not persist PDF to disk: {exc}")
+
         pages_text, status = extract_pdf_pages(pdf_bytes)
         if status == "scanned_image_only":
             notes += " Document appears to be a scanned image PDF; text extraction yielded no selectable text."
