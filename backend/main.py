@@ -42,7 +42,7 @@ from config import get_settings
 from db.database import engine, SessionLocal, run_migrations
 from db.models import Base
 from services.seed_service import seed_portfolio
-from routers import portfolio, today, research
+from routers import portfolio, today, research, push
 
 settings = get_settings()
 
@@ -108,6 +108,7 @@ app.add_middleware(
 app.include_router(portfolio.router)
 app.include_router(today.router)
 app.include_router(research.router)
+app.include_router(push.router)
 
 
 # ---------------------------------------------------------------------------
@@ -115,6 +116,7 @@ app.include_router(research.router)
 # ---------------------------------------------------------------------------
 
 @app.get("/api/health", tags=["health"])
+@app.get("/health", tags=["health"])
 def health() -> dict:
     """Simple liveness probe — returns server status and phase completion."""
     return {
@@ -124,8 +126,9 @@ def health() -> dict:
         "phases": {
             "1_backend_skeleton": "complete",
             "2_announcements": "complete",
-            "3_research": "stub",
-            "4_frontend": "not_started",
+            "3_research": "complete",
+            "4_alerts_insights": "complete",
+            "5_frontend": "not_started",
         },
     }
 

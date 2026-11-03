@@ -279,6 +279,7 @@ def ingest_announcements(
         key[0] for key in db.query(Announcement.dedup_key).filter(Announcement.dedup_key.isnot(None)).all()
     }
 
+    new_records: list[Announcement] = []
     for raw_item in raw_items:
         parsed = parse_announcement_dict(raw_item, exchange="NSE")
         if not parsed:
@@ -311,10 +312,19 @@ def ingest_announcements(
             dedup_key=dedup_key,
         )
         db.add(record)
+        new_records.append(record)
         existing_keys.add(dedup_key)
         inserted_count += 1
 
     db.commit()
+
+    # Trigger Push alert evaluation for newly ingested announcements
+    if new_records:
+        try:
+            from services.insights_service import evaluate_announcement_alerts
+            evaluate_announcement_alerts(db, new_records)
+        except Exception as exc:
+            logger.warning(f"Error evaluating announcement alerts during ingestion: {exc}")
 
     status = "ok" if not fetch_error else "partial"
     message = (

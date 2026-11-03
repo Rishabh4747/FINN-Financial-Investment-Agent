@@ -283,14 +283,16 @@ class TestTodayAPI:
         app.dependency_overrides.clear()
 
     def test_get_announcements_default_window(self):
-        r = self.client.get("/api/today/announcements")
+        # Use hours=0 to retrieve all announcements regardless of fixture timestamps,
+        # since synthetic fixtures use fixed past dates that would fall outside a 24h window.
+        r = self.client.get("/api/today/announcements?hours=0")
         assert r.status_code == 200
         data = r.json()
         assert isinstance(data, list)
         assert len(data) > 0
 
     def test_announcement_response_schema(self):
-        r = self.client.get("/api/today/announcements?limit=1")
+        r = self.client.get("/api/today/announcements?hours=0&limit=1")
         assert r.status_code == 200
         item = r.json()[0]
         expected_fields = {
